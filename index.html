@@ -24,7 +24,6 @@ background-color: rgba(232, 209, 165, 0.6);
 
 
     <script>AOS.init();</script>
-    <script src="js/main.js">  </script>
     <div id="nav">
       <h1 id="title">Massimo Pierucci</h1>
     </div>
@@ -152,6 +151,28 @@ background-color: rgba(232, 209, 165, 0.6);
 
     </div>
 
+    <script>
+    $(document).ready(function() {
 
+      var Sheight = $(window).height();
+      document.getElementById('meta').style.height = Sheight * 1.01 + 'px';
+
+
+      $(window).scroll(function() {
+        if($(document).scrollTop() > 350) {
+          $('#nav').addClass('shrink');
+          $('#title').addClass('shrinken');
+        } else {
+          $('#nav').removeClass('shrink');
+          $('#title').removeClass('shrinken');
+        }
+      });
+    });
+    $(window).on('resize', function(){
+      var Sheight = $(window).height();
+      document.getElementById('meta').style.height = Sheight * 1.01 + 'px';
+    });
+
+    </script>
   </body>
 </html>
